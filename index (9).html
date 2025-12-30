@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تهنئة رأس السنة 2026 - محمود أبو الفضل</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            background-color: #0f172a;
+        }
+
+        .bg-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('new.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* زيادة التعتيم قليلاً لوضوح النص الطويل */
+            z-index: -1;
+        }
+
+        .content {
+            z-index: 10;
+            padding: 20px;
+            max-width: 900px; /* توسيع العرض لاستيعاب الجملة الطويلة */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* تنسيق النصوص مع مؤشر الكتابة */
+        .typewriter-text {
+            font-size: 2.2rem; /* تصغير طفيف */
+            margin-bottom: 15px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            line-height: 1.4;
+            display: inline-block;
+            min-height: 1.5em;
+            position: relative;
+            font-weight: 700;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #ffd700;
+            animation: blink 0.75s step-end infinite;
+            margin-right: 5px;
+            vertical-align: text-bottom;
+            height: 1em;
+        }
+
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .sub-text {
+            font-size: 1.4rem; /* خط أصغر للجملة الطويلة */
+            margin-bottom: 25px;
+            font-weight: 400;
+            color: #e2e8f0;
+            max-width: 90%;
+            line-height: 1.6;
+        }
+
+        /* تنسيق عام 2026 الذهبي */
+        .year-wrapper {
+            margin: 20px auto;
+            display: inline-block;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 1s ease;
+        }
+        
+        .year-wrapper.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .golden-year {
+            font-size: 3.5rem;
+            font-weight: 900;
+            padding: 10px 30px;
+            border-radius: 20px;
+            color: #fff;
+            background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            background-size: 200% 200%;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            animation: shine 3s ease infinite, pulseFade 2.5s ease-in-out infinite alternate;
+            display: inline-block;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+         /* توقيع محمود */
+        .signature {
+            margin-top: 50px;
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 35px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-direction: row;
+            transition: all 1s ease;
+        }
+
+        .signature.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .signature img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .signature-text {
+            text-align: right;
+        }
+
+        .signature span {
+            color: #ffd700;
+            font-weight: bold;
+            display: block;
+            font-size: 1.3rem;
+        }
+
+        @keyframes shine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulseFade {
+            0% { transform: scale(1); opacity: 1; box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            100% { transform: scale(1.05); opacity: 0.8; box-shadow: 0 0 50px rgba(255, 215, 0, 0.9); }
+        }
+
+
+        /* البلالين */
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1); 
+            animation: floatUp linear forwards;
+        }
+        
+        .balloon::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes floatUp {
+            0% { bottom: -100px; opacity: 1; transform: translateX(0) rotate(0deg); }
+            100% { bottom: 120vh; opacity: 0.7; transform: translateX(var(--random-x)) rotate(var(--random-rot)); }
+        }
+
+        @media (max-width: 600px) {
+            .typewriter-text { font-size: 1.5rem; }
+            .sub-text { font-size: 1.1rem; }
+            .golden-year { font-size: 2.5rem; padding: 10px 30px; }
+            .signature { flex-direction: column; padding: 15px; }
+            .signature-text { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-container"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+        <!-- النص الأول (العنوان) -->
+        <h1 id="text1" class="typewriter-text"></h1>
+        
+        <!-- النص الثاني (الدعاء والتمنيات) -->
+        <div id="text2" class="typewriter-text sub-text"></div>
+
+        <!-- عام 2026 -->
+        <div class="year-wrapper" id="yearBox">
+            <div class="golden-year">2026</div>
+        </div>
+
+        <!-- التوقيع مع الصورة -->
+        <div class="signature" id="signatureBox">
+            <img src="ma.png" alt="محمود أبو الفضل" onerror="this.src='https://via.placeholder.com/60/ffd700/000000?text=MA'">
+            <div class="signature-text">
+                تهنئة خاصة من <br> 
+                <span>محمود أبو الفضل</span>
+            </div>
+        </div>
+    </div>
+
+   <script>
+    const message1 = "كل سنة وأنتو طيبين بمناسبة 2026";
+const message2 = "إن شاء الله تكون سنة مليانة خير وطاقة حلوة، ونجاحات ما تخلصش في الشغل والحياة";
+
+    function typeWriter(elementId, text, speed, callback) {
+        let i = 0;
+        const element = document.getElementById(elementId);
+        const cursor = document.createElement('span');
+        cursor.className = 'cursor';
+        element.appendChild(cursor);
+
+        function typing() {
+            if (i < text.length) {
+                cursor.before(text.charAt(i));
+                i++;
+                setTimeout(typing, speed);
+            } else {
+                cursor.remove();
+                if (callback) callback();
+            }
+        }
+        typing();
+    }
+
+    window.onload = function () {
+        typeWriter("text1", message1, 100, function () {
+            setTimeout(() => {
+                typeWriter("text2", message2, 100, function () {
+                    document.getElementById("yearBox").classList.add("visible");
+
+                    setTimeout(() => {
+                        document.getElementById("signatureBox").classList.add("visible");
+                    }, 1000);
+                });
+            }, 500);
+        });
+
+        setInterval(createBalloon, 400);
+        for (let i = 0; i < 10; i++) {
+            setTimeout(createBalloon, i * 200);
+        }
+    };
+
+    function createBalloon() {
+        const balloon = document.createElement('div');
+        balloon.classList.add('balloon');
+
+        const colors = [
+            'rgba(255, 87, 87, 0.8)',
+            'rgba(255, 193, 7, 0.8)',
+            'rgba(33, 150, 243, 0.8)',
+            'rgba(76, 175, 80, 0.8)',
+            'rgba(156, 39, 176, 0.8)',
+            'rgba(255, 215, 0, 0.9)'
+        ];
+
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        balloon.style.backgroundColor = randomColor;
+
+        const randomLeft = Math.random() * 90 + 5;
+        const randomDuration = Math.random() * 5 + 5;
+        const randomX = (Math.random() - 0.5) * 100 + 'px';
+        const randomRot = (Math.random() - 0.5) * 30 + 'deg';
+
+        balloon.style.left = `${randomLeft}%`;
+        balloon.style.animationDuration = `${randomDuration}s`;
+        balloon.style.setProperty('--random-x', randomX);
+        balloon.style.setProperty('--random-rot', randomRot);
+
+        const size = Math.random() * 30 + 30;
+        balloon.style.width = `${size}px`;
+        balloon.style.height = `${size * 1.2}px`;
+
+        document.body.appendChild(balloon);
+
+        setTimeout(() => balloon.remove(), randomDuration * 1000);
+    }
+</script>
+</body>
+</html>
+
+
+
